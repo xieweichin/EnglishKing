@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    cursor: pointer; /* 讓整個頁面顯示為手型鼠標 */
+    overflow: hidden; /* 防止滾動條出現 */
+}
+
+#main-wrapper {
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center; /* 水平居中對齊 */
+    width: 90%; /* 整個應用程式的寬度 */
+    max-width: 1200px; /* 最大寬度限制 */
+    height: 90vh; /* 整個應用程式的高度 */
+    box-sizing: border-box; /* 包含 padding 和 border 在寬高內 */
+}
+
+#competition-title {
+    font-size: 2.5em;
+    color: #0056b3; /* 深藍色 */
+    margin-bottom: 25px; /* 與下方內容的間距 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 0 10px; /* 避免文字緊貼邊緣 */
+}
+
+#main-container {
+    display: flex;
+    width: 100%; /* 佔據 wrapper 的 100% 寬度 */
+    flex-grow: 1; /* 讓 main-container 盡可能佔據剩餘空間 */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* 與按鈕之間的間距 */
+    min-height: 300px; /* 確保內容區域有最小高度 */
+}
+
+#flashcard-container {
+    flex: 2; /* 佔據左側 2/3 寬度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-right: 1px solid #ddd; /* 分隔線 */
+    overflow: hidden; /* 防止內容溢出 */
+}
+
+#card-content {
+    width: 100%;
+    text-align: center;
+}
+
+#question {
+    font-size: 7.5em; /* 調整字體大小以適應新佈局 */
+    color: #333;
+    margin-bottom: 20px;
+    word-wrap: break-word; /* 長單字自動換行 */
+}
+
+#answer {
+    font-size: 6em; /* 調整字體大小 */
+    color: #007bff;
+    font-weight: bold;
+    word-wrap: break-word; /* 長單字自動換行 */
+}
+
+.hidden {
+    display: none;
+}
+
+#timer-container {
+    flex: 1; /* 佔據右側 1/3 寬度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef; /* 倒數計時器背景色 */
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px;
+}
+
+#countdown {
+    font-size: 8em; /* 倒數數字大小 */
+    font-weight: bold;
+    color: #dc3545; /* 倒數數字顏色 */
+}
+
+#shuffleButton {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: #28a745; /* 綠色按鈕 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* 防止按鈕被壓縮 */
+}
+
+#shuffleButton:hover {
+    background-color: #218838;
+}
+
+/* 響應式設計：小螢幕調整字體大小和佈局 */
+@media (max-width: 768px) {
+    #main-wrapper {
+        width: 95%;
+        height: auto; /* 高度自適應 */
+        min-height: 90vh; /* 確保至少有一定高度 */
+        padding: 15px 0;
+    }
+
+    #competition-title {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    #main-container {
+        flex-direction: column; /* 小螢幕下垂直堆疊 */
+        margin-bottom: 15px;
+        height: auto;
+        min-height: 400px; /* 確保卡片內容有足夠空間 */
+    }
+
+    #flashcard-container {
+        flex: none; /* 取消 flex 比例 */
+        width: 100%; /* 佔據 100% 寬度 */
+        height: 70%; /* 大部分空間給題目 */
+        border-right: none;
+        border-bottom: 1px solid #ddd; /* 垂直分隔線改為水平 */
+        padding: 15px;
+    }
+
+    #timer-container {
+        flex: none; /* 取消 flex 比例 */
+        width: 100%; /* 佔據 100% 寬度 */
+        height: 30%; /* 小部分空間給計時器 */
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 15px; /* 調整圓角 */
+        padding: 15px;
+    }
+
+    #question {
+        font-size: 2.5em;
+    }
+
+    #answer {
+        font-size: 2em;
+    }
+
+    #countdown {
+        font-size: 6em;
+    }
+
+    #shuffleButton {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #competition-title {
+        font-size: 1.5em;
+    }
+    #question {
+        font-size: 2em;
+    }
+    #answer {
+        font-size: 1.8em;
+    }
+    #countdown {
+        font-size: 5em;
+    }
+    #shuffleButton {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}

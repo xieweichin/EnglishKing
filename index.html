@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文單字閃卡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-wrapper">
+        <h1 id="competition-title">2025 八德國中英文單字王競賽</h1>
+        <div id="main-container">
+            <div id="flashcard-container">
+                <div id="card-content">
+                    <h1 id="question">點擊開始學習</h1>
+                    <p id="answer" class="hidden"></p>
+                </div>
+            </div>
+            <div id="timer-container">
+                <div id="countdown">15</div>
+                <audio id="beepSound" src="beep.mp3" preload="auto"></audio> 
+            </div>
+        </div>
+        <button id="shuffleButton">隨機出題</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
